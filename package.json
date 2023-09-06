@@ -2,5 +2,24 @@
   "dependencies": {
     "joi": "^13.1.0",
     "url": "^0.11.1"
-  }
+  },
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Asimm/NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-Asimm/NodeJS/issues"
+  },
+  "homepage": "https://github.com/M-Asimm/NodeJS#readme",
+  "description": ""
 }
