@@ -5,21 +5,16 @@
  */
 const express = require('express');
 const mongoose = require('mongoose');
-console.log(mongoose)
 const router = require('./routes/userRoute.js')
 const app = express();
 
-mongoose.connect("mongodb://0.0.0.0:27017")
-    .then(() => {
-        console.log("connection is established")
-    })
-    .catch(err => console.log(err.message))
+//mongoDB connection
+require('./model/connectDB.js')();
 
+//middleware which read the body data
 app.use(express.json());
 
-
-
-
+//middleware which can handle routes
 app.use('/api/users', router)
 
 app.listen(3000, () => {
