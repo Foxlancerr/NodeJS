@@ -4,6 +4,7 @@
     "joi": "^13.1.0",
     "mongoose": "^7.5.0",
     "nodemon": "^3.0.1",
+    "shortid": "^2.2.16",
     "url": "^0.11.1"
   },
   "name": "nodejs",
