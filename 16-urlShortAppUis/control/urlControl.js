@@ -6,7 +6,7 @@ const Url = require('../model/urlSchema.js')
 async function getAllUrls(req, res) {
     const allUrl = await Url.find({})
     if (allUrl.length == 0) return res.send("no data found")
-    res.render("home")
+    return res.render("home", { url: allUrl })
 }
 async function createNewUrl(req, res) {
     const url = req.body.siteUrl;
@@ -16,11 +16,14 @@ async function createNewUrl(req, res) {
         siteUrl: url,
         totalRequest: []
     })
-    res.send(newUrl)
+    const data = await Url.find({})
+    return res.render("home", {
+        url:data
+    })
 }
 async function countRequest(req, res) {
-    const id = req.params.id;
-    const result = await Url.findOneAndUpdate({ shortId: id }, {
+    const shortID = req.params.id;
+    const result = await Url.findOneAndUpdate({ shortId: shortID }, {
         $push: { totalRequest: { timeStamp: Date.now() } }
     })
     console.log(result)
@@ -44,7 +47,7 @@ async function updateUrl(req, res) {
     res.send(delUrl);
 }
 
-module.exports ={
+module.exports = {
     updateUrl,
     deleteUrl,
     getAllUrls,
