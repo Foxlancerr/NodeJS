@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedios - Page</title>
+    <style>
+      .each{
+        background-color: rgb(227, 255, 255);
+        margin-bottom: 10px;
+        padding: 15px 15px;
+        border-radius: 20px;
+      }
+      .each p{
+        color: rgb(43, 43, 43);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>All Listed Vedios</h1>
+    <div>
+      <% allChannelVedios.forEach(ved => { %>
+      <div class="each">
+        <h2><%= ved.title%></h2>
+        <p><%= ved.description%></p>
+        <p><%= ved.vedioUrl%></p>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

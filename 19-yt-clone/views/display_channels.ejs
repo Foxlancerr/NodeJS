@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Page</title>
+    <style>
+      .each{
+        background-color: rgb(227, 255, 255);
+        margin-bottom: 10px;
+        padding: 15px 15px;
+        border-radius: 20px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>All Listed Channels</h1>
+    <div class="all">
+      <% allChannels.forEach(element => { %>
+      <div class="each">
+        <h2><%= element.name%></h2>
+        <p><%= element.description%></p>
+        <span><%= element.profileImage%></span>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

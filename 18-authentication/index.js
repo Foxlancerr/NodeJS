@@ -21,8 +21,11 @@ const staticRouter = require('./routes/staticRoute.js')
 
 const app = express()
 
+//form data accepted middleware
 app.use(express.urlencoded({ extended: false }))
+//body data accepted middleware
 app.use(express.json())
+//cokies accepted middleware
 app.use(cokiesParser())
 
 
@@ -30,7 +33,9 @@ app.use('/url', auth, urlRouter)
 app.use('/user', userRouter)
 app.use('/', staticRouter)
 
+//we can set the view engine as ejs to render data into the browser
 app.set('view engine', "ejs");
+//we can set where is the folder which store the EJS files
 app.set('views', path.resolve(__dirname, "views"));
 
 

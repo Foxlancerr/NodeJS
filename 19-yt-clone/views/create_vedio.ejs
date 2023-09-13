@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>upload-vedio-Page</title>
+    <style>
+      form{
+        display: flex;
+        align-items: left;
+        gap: 10px;
+        flex-direction: column;
+      }
+      form button{
+        background-color: blueviolet;
+        padding: 10px;
+        color: aliceblue;
+        font-size: 20px;
+      }
+      form div{
+        display: flex;
+
+      }
+      form div label{
+        color: blue;
+        font-weight: 100;
+        letter-spacing: .5px;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>Upload-Vedios</h1>
+    <form action="/channel/vedios/create" method="post">
+      <div>
+        <label for="vedioUrl">Vedio:</label>
+        <input type="file" name="vedioUrl" id="vedioUrl" />
+      </div>
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" />
+      </div>
+      <div>
+        <label for="desc">VediosDescription:</label>
+        <input type="text" name="description" id="desc" />
+      </div>
+      <div>
+        <label for="thumbnail">Thumbnail:</label>
+        <input type="file" name="thumbnail" id="thumbnail" />
+      </div>
+      <button type="submit">
+        Submit
+      </button>
+      <hr />
+    </form>
+  </body>
+</html>

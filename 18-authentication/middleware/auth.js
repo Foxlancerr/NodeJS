@@ -1,5 +1,4 @@
 const { getUserSessionId } = require('../utils/uidStore.js')
-const userData = require('../model/userSchema.js')
 
 async function restricLoggedUser(req, res, next) {
     const userUid = req.cookies?.uid;

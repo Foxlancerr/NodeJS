@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Short Clone</title>
+    <style>
+      h1 {
+        padding: 0;
+        margin: 0;
+        font-size: 8vw;
+      }
+      span {
+        color: blueviolet;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+      div{
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Youtube Mini functional Clone</h1>
+    <h2>Functionality</h2>
+    <ul>
+      <li>Upload vedios,Delete Vedios,Update Vedios,Get vedios</li>
+      <li>Create Channels,Delete Channel,Update Channel,Get Channel</li>
+    </ul>
+    <h2>Routes</h2>
+    <div>
+      <ul>
+        <h3>Channel</h3>
+        <li><span>Get Channel:</span> http://localhost:3000/channel</li>
+        <li>
+          <span>Create Channel:</span> http://localhost:3000/channel/create
+        </li>
+        <li>
+          <span>Update Channel:</span> http://localhost:3000/channel/update/:id
+        </li>
+        <li>
+          <span>Delete Channel:</span> http://localhost:3000/channel/delete/:id
+        </li>
+      </ul>
+      <ul>
+        <h3>Vedios</h3>
+        <li><span>Get Vedios:</span> http://localhost:3000/channel/vedios</li>
+        <li>
+          <span>Create Vedios:</span>
+          http://localhost:3000/channel/vedios/create
+        </li>
+        <li>
+          <span>Update Vedios:</span>
+          http://localhost:3000/channel/vedios/update/:id
+        </li>
+        <li>
+          <span>Delete Vedios:</span>
+          http://localhost:3000/channel/vedios/delete/:id
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

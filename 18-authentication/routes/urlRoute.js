@@ -1,7 +1,5 @@
 const express = require("express")
 const { countRequest, deleteUrl, updateUrl, createNewUrl } = require("../control/urlControl.js")
-const mongoose = require("mongoose");
-
 
 const router = express.Router()
 
