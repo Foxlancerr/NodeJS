@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express')
-const Db_Yt_Channel = require('../model/db_yt_channel');
+const Db_Yt_Channel = require('../model/db_yt_channels');
 
 const yt_channelRouter = express.Router();
 

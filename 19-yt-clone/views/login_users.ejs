@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-User-Page</title>
+    <style>
+      form{
+        display: flex;
+        align-items: left;
+        gap: 10px;
+        flex-direction: column;
+      }
+      form button{
+        background-color: blueviolet;
+        padding: 10px;
+        color: aliceblue;
+        font-size: 20px;
+      }
+      form div{
+        display: flex;
+
+      }
+      form div label{
+        color: blue;
+        font-weight: 100;
+        letter-spacing: .5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login User</h1>
+    <form action="/users/login" method="post">
+      <div>
+        <label for="name">UserName:</label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <button type="submit">
+        Submit
+      </button>
+      <hr />
+     
+    </form>
+  </body>
+</html>
