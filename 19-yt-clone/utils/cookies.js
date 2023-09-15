@@ -1,13 +1,14 @@
 const jsonToken = require('jsonwebtoken');
-const { get } = require('mongoose');
-console.log(jsonToken)
 const privateKey = "yt-Clone"
 
 function setUser(user) {
-    return jsonToken.sign({ ...user }, privateKey)
+    
+
+    return jsonToken.sign({...user}, privateKey)
 }
 
 function getUser(token) {
+    console.log(token)
     return jsonToken.verify(token, privateKey)
 }
 

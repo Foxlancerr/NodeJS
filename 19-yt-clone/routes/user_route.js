@@ -1,5 +1,6 @@
 const express = require('express');
 const Db_User = require('../model/db_yt_users');
+const {setUser} = require('../utils/cookies')
 const yt_userRouter = express.Router();
 
 yt_userRouter.post('/create', async (req, res) => {
@@ -37,8 +38,9 @@ yt_userRouter.post('/login', async (req, res) => {
             password: password
         })
 
-        console.log("logUser"+logUser)
-        
+        const token = setUser(logUser);
+        res.cookie("token",token)
+                
         if (!logUser) return res.redirect('/users/create')
             res.redirect('/users')
     }catch(err){

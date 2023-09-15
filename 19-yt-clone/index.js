@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cookiesParser = require('cookie-parser');
 const yt_channelRouter = require('./routes/yt_channel_route.js')
 const yt_userRouter = require('./routes/user_route.js')
 const yt_channelVediosRouter = require('./routes/yt_channel_vedios_route.js')
@@ -13,6 +14,8 @@ app.set('views', path.resolve(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
+app.use(cookiesParser())
+
 
 app.use('/channel',yt_channelRouter)
 app.use('/users',yt_userRouter)

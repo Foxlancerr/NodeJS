@@ -1,6 +1,7 @@
 const express = require('express');
 const Url = require('../model/urlSchema.js')
 const auth = require('../middleware/auth.js')
+console.log(auth)
 
 
 const router = express.Router();
