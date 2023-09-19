@@ -23,10 +23,11 @@ userRouter.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
 
-        const login = await Db_User.matchPassword(username, password);
-        if (!login) res.redirect('/signup')
-        res.redirect('/')
+        const token = await Db_User.matchPassword(username, password);
+        if (!token) res.redirect('/signup')
+        res.cookie('token', token).redirect('/')
     } catch (err) {
+        console.error(err)
         res.render('signup', {
             info: err.message
         })

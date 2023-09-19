@@ -1,16 +1,19 @@
 const express = require('express');
 const staticRouter = express.Router();
+const authLogin = require('../middlewares/auth');
 const Db_Blog = require('../model/db_blogs')
 
-staticRouter.get('/',async (req,res) =>{
-   res.render('home')
+staticRouter.get('/',authLogin,async (req,res) =>{
+   res.render('home',{
+    user: req.user
+   })
 })
 
-staticRouter.get('/login',(req,res) =>{
+staticRouter.get('/user/login',(req,res) =>{
     res.render('login')
 })
 
-staticRouter.get('/signup',(req,res) =>{
+staticRouter.get('/user/signup',(req,res) =>{
     res.render('signup')
 })
 
@@ -19,25 +22,31 @@ staticRouter.get('/signup',(req,res) =>{
  * ****************************************************************************
  */
 
-staticRouter.get('/blog',async (req,res) =>{
+staticRouter.get('/blog',authLogin,async (req,res) =>{
     const blogs = await Db_Blog.find({})
     if(!blogs) res.redirect('/create')
     res.render('blogs',{
-        blogs:blogs
+        blogs:blogs,
+        user: req.user
     })
 })
 
-staticRouter.get('/blog/create',async(req,res)=>{
-    res.render('create_blog')
+staticRouter.get('/blog/create',authLogin,async(req,res)=>{
+    console.log(req.user)
+    res.render('create_blog',{
+        user: req.user
+    })
 })
 
-staticRouter.get('/blog/:id', async (req, res) => {
+staticRouter.get('/blog/:id',authLogin, async (req, res) => {
+    console.log(req.user)
     const id = req.params.id
     
     const blog = await Db_Blog.findOne({_id: id})
     console.log(blog)
     res.render('each_blog',{
-        blog:blog
+        blog:blog,
+        user: req.user
     })
 })
 

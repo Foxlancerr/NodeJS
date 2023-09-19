@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const crypto = require('crypto')
+const { createNewToken } = require('../utils/token')
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -57,7 +58,9 @@ userSchema.static('matchPassword',async function (username, password){
 
     if(providedPassword !== hashedPassword) throw new Error('password is not correct')
 
-    return user
+    const token = createNewToken(user);
+    console.log(token)
+    return token
 })
 
 const Db_User = mongoose.model('user', userSchema)
