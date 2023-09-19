@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include('./components/bootstrap_link.ejs') %>
+    <title>Blogify | Blogs | Page</title>
+  </head>
+  <body class="container">
+    <%- include('./components/nav.ejs') %>
+    <main class="mt-2">
+      <h1>Blogs | Page</h1>
+      <br>
+      <br>
+      <div class="row mt-2 column-gap-5">
+        <% if (locals.blogs) { locals.blogs.forEach(blog => { %>
+        <div class="card col-6" style="width: 18rem">
+          <img src="<%= blog.coverImage %>" class="card-img-top" alt="<%= blog.title %>" />
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            <pre class="card-text"><%= blog.desc %></pre>
+            <a href="/blog/<%= blog._id %>" class="btn bg-dark text-white">View</a>
+          </div>
+        </div>
+        <% }) } %>
+      </div>
+    </main>
+    <%- include('./components/bootstrap_script.ejs') %>
+  </body>
+</html>

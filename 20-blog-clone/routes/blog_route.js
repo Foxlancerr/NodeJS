@@ -12,17 +12,10 @@ blogRouter.post('/create', async (req, res) => {
     })
 
     if (!blog) return res.send('someThing wrong')
-    res.render('blog')
+    res.redirect('/blog')
 })
 
-blogRouter.post('/:id', async (req, res) => {
-    const id = req.params.id
-    
-    const blog = await Db_Blog.findOne({id})
 
-    if (!blog) return res.send('someThing wrong')
-    res.render('blog')
-})
 
 
 

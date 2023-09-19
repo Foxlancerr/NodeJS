@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <%- include('./components/bootstrap_link.ejs') %>
-    <title>Blogify | Blog | Page</title>
-</head>
-<body class="container">
+    <title>Blogify | Each - Blog | Page</title>
+  </head>
+  <body class="container">
     <%- include('./components/nav.ejs') %>
     <main class="mt-2">
+      <h1>| Each - Blog |</h1>
 
-        <h1>Each Blog | Page</h1>
+      <% if (locals.blog) { %>
+        <br>
+        <br>
+      <div class="body">
+        <div class="img-post">
+          <img
+            class="d-block img-fluid"
+            src="<%= locals.blog.coverImage %>"
+            alt="<%= locals.blog.title  %>"
+          />
+        </div>
+        <h3><%= locals.blog.title %></h3>
+        <p><%= locals.blog.desc %></p>
+      </div>
+      <% } %>
     </main>
     <%- include('./components/bootstrap_script.ejs') %>
-</body>
+  </body>
 </html>

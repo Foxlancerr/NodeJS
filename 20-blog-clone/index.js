@@ -15,8 +15,8 @@ app.use(express.json())
 
 
 
-app.use('/',userRouter)
-app.use('/',blogRouter)
+app.use('/user',userRouter)
+app.use('/blog',blogRouter)
 app.use('/',staticRouter)
 
 app.listen(3000,()=>{

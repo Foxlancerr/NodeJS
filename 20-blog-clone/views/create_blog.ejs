@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include('./components/bootstrap_link.ejs') %>
+    <title>Blogify | Create | Blog | Page</title>
+  </head>
+  <body class="container">
+    <%- include('./components/nav.ejs') %>
+    <main class="mt-2">
+      <h1>Create | Blog | Page</h1>
+      <br />
+      <form action="/blog/create" method="post" class="mt-2">
+        <div class="mb-2">
+          <label for="title">Title:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="desc">Description:</label>
+          <textarea class="form-control" name="desc" id="desc" rows="10"></textarea>
+        </div>
+        <div class="mb-2">
+          <label for="coverImage">File Upload:</label>
+          <input
+            class="form-control"
+            type="file"
+            id="coverImage"
+            name="coverImage"
+          />
+        </div>
+        <button class="bg-dark text-white btn" type="submit">Create</button>
+      </form>
+    </main>
+    <%- include('./components/bootstrap_script.ejs') %>
+  </body>
+</html>
