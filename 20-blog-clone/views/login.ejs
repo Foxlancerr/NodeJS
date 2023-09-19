@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include('./components/bootstrap_link.ejs') %>
+    <title>Blogify | Login | Page</title>
+  </head>
+  <body class="container">
+    <%- include('./components/nav.ejs') %>
+    <main class="mt-2">
+      <h1>Login | Page</h1>
+      <br />
+      <% if (locals.info) { %>
+        <div class="alert alert-danger" role="alert"><%= locals.info %></div>
+        <% } %>
+      <form action="/login" method="post" class="mt-2">
+        <div class="mb-2">
+          <label for="name">Username:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="name"
+            name="username"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="password">Password:</label>
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <button class="bg-dark text-white btn" type="submit">Login</button>
+      </form>
+    </main>
+    <%- include('./components/bootstrap_script.ejs') %>
+  </body>
+</html>
