@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
     console.log(myUrl)
     if (req.url == '/favicon.ico') return res.end();
     const log = `${Date.now()}: ${req.url} new request is recieved\n`
-    fs.appendFile("./06-urlModule/log.txt", log, (err, data) => {
+    fs.appendFile("./07-httpMethods/log.txt", log, (err, data) => {
         switch (myUrl.pathname) {
             case '/':
 
